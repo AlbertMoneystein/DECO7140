@@ -1,0 +1,9 @@
+.page-container {
+    width: 80%;
+    margin: 2% auto;
+}
+
+header {
+    width: 100%;
+    background-color: beige;
+}

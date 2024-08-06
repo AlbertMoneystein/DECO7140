@@ -1,0 +1,51 @@
+
+:root {
+    --primary: #348888;
+    --secondary: #22BABB;
+    --light: #9EF8EE;
+    --action: #FA7F08;
+    --danger: #F24405;
+}
+
+/* 网站字体和基础设置 */
+body {
+    font-family: "Oswald", 'Arial', sans-serif;
+    font-size: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    color: var(--primary);
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    color: var(--secondary);
+}
+h3 {
+    font-size: 1.5rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/* 四级标题样式 */
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1%; /* 设置顶部外边距 */
+    margin-bottom: 1%; /* 设置底部外边距 */
+}
+
+
+/* 段落样式 */
+p {
+    font-size: 1.1rem;
+    margin-top: 1%; /* 设置顶部外边距 */
+    margin-bottom: 1%; /* 设置底部外边距 */
+}
