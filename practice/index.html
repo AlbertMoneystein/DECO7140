@@ -15,9 +15,11 @@
   <body>
     <header>
       <h1>My portfolio Site</h1>
-      <nav>
-        <a href="project1.html">Project 1</a>
-        <a href="project2.html">Project 2</a>
+    
+        <nav class="navbar">
+
+        <a href="project1.html" class="mx-1">Project 1</a>
+        <a href="project2.html" class="mx-1">Project 2</a>
       </nav>
     </header>
     <main class="page-container">
@@ -38,6 +40,32 @@
           </p>
         </div>
       </div>
+      <div>
+        <div class="card">
+          <!-- <img src="image-url.jpg" alt="Card image" class="card-image"> -->
+          <div class="card-content">
+              <h2 class="card-title mb-1">Give me some feedback!</h2>
+              <p class="card-text">I'd really like to hear your feedback on this work.</p>
+
+              <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="comment">Your Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                </div>
+            
+                <button type="submit" class="btn btn-primary my-1 center-block">Submit</button>
+            </form>
+            
+              
+          </div>
+      </div>
+      
+    </div>
     </main>
     <footer>
       <footer>

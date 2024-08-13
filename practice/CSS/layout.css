@@ -1,6 +1,6 @@
 .page-container {
     width: 80%;
-    margin: 2% auto;
+    margin: 15% auto 2% auto;
 }
 
 
@@ -9,6 +9,10 @@ header {
     width: 100%;
     background-color: var(--secondary);
     padding: 1%;
+    position: fixed;
+   top:0;
+    left:0;
+    
 }
 
 header h1 {
