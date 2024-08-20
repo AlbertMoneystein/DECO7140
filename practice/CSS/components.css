@@ -109,5 +109,20 @@
 .navbar a:hover {
     background-color: var(--secondary);
 }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    gap:10px;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
