@@ -3,17 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Title</title>
+    <title>Health & Fitness Homepage</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/menu.js"></script>
   </head>
   <body>
     <header>
-      <h1>Pete's assessment project page</h1>
+      <!--<div class="logo">Fitness Website</div>-->
+      <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo">
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <!-- Add hamburger menu button -->
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="workout.html">Workout Plans</a></li>
+          <li><a href="nutrition.html">Nutrition Guide</a></li>
+          <!--<li><a href="#">Mental Health</a></li>-->
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
-      <p><a href="../index.html">Home</a></p>
-    </main>
+
+    <section class="home-hero">
+      <h1>Discover the Best Workout Plans for You</h1>
+      <p>Personalized fitness plans to help you achieve your goals.</p>
+      <button>Start Exploring</button>
+    </section>
+
+    <section class="workouts">
+      <h2>Recommended Workout Plans</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="assets/workout1.jpg" alt="Beginner Strength Training" />
+          <h3>Beginner Strength Training</h3>
+          <p>30 minutes | Beginner</p>
+          <button>View Details</button>
+        </div>
+        <div class="card">
+          <img src="assets/workout2.jpg" alt="Cardio Workout" />
+          <h3>Cardio Workout</h3>
+          <p>45 minutes | Intermediate</p>
+          <button>View Details</button>
+        </div>
+        <div class="card">
+          <img src="assets/workout3.jpg" alt="Flexibility Workout" />
+          <h3>Flexibility Workout</h3>
+          <p>20 minutes | Advanced</p>
+          <button>View Details</button>
+        </div>
+      </div>
+    </section>
+
     <footer>
-      <p>&copy; 2024 Your Name. All rights reserved.</p>
+      <p>Contact Us | Privacy Policy | Social Media</p>
     </footer>
   </body>
 </html>
