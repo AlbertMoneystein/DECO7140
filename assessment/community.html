@@ -1,71 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Story Sharing</title>
-   <!-- <link rel="stylesheet" href="css/community-style.css">-->
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/menu.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generic Chat</title>
+  
+  <link rel="stylesheet" href="/assessment/css/community.css">
 </head>
 <body>
+  <div class="chatroom-grid">
+    <header class="chatroom-header">
+      <h1>Generic Chat Room</h1>
+    </header>
 
-    <header>
-        <!--<div class="logo">Fitness Website</div>-->
-        <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
-        <nav>
-          <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-          <!-- Add hamburger menu button -->
-          <ul id="nav-links" class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="workout.html">Workout Plans</a></li>
-            <li><a href="nutrition.html">Nutrition Guide</a></li>
-            <!--<li><a href="#">Mental Health</a></li>-->
-            <li><a href="community.html">Community</a></li>
-          </ul>
-        </nav>
-      </header>
-    <h1>Community Story Sharing</h1>
+    <main class="main-content" id="chat-list">
+      <!-- Dynamic chat posts will be loaded here -->
+    </main>
 
-    <!-- Registration Form -->
-    <div class="form-container signup-form">
-        <h2>Sign Up</h2>
-        <form id="signupForm">
-            <input type="text" id="signupUsername" placeholder="Username" required><br>
-            <input type="password" id="signupPassword" placeholder="Password" required><br>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <button id="showLoginForm" class="link-button">Login here</button></p>
-    </div>
+    <aside class="sidebar">
+      <h2>Post a new chat</h2>
+      <form id="chatPostForm">
+        <label for="person_name">Your Name:</label>
+        <input type="text" id="person_name" name="person_name" required>
 
-    <!-- Login Form -->
-    <div class="form-container login-form" style="display:none;">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required><br>
-            <input type="password" id="password" placeholder="Password" required><br>
-            <button type="submit">Login</button>
-        </form>
-    </div>
+        <label for="chat_post_title">Post Title:</label>
+        <input type="text" id="chat_post_title" name="chat_post_title" required>
 
-    <!-- Story Submission Form and Logout Button -->
-    <div class="form-container story-form" style="display:none;">
-        <h2>Submit Your Story</h2>
-        <form id="storyForm">
-            <input type="text" id="storyTitle" placeholder="Story Title" required><br>
-            <textarea id="storyContent" placeholder="Write your story here..." required></textarea><br>
-            <button type="submit">Submit</button>
-        </form>
-        <button class="logout" id="logoutButton">Quit</button>
-    </div>
+        <label for="chat_post_content">Post Content:</label>
+        <textarea id="chat_post_content" name="chat_post_content" required></textarea>
 
-    <!-- Story Display Area -->
-    <div class="story-list">
-        <h2>Stories</h2>
-        <div id="stories"></div>
-    </div>
+        <input type="submit" value="Submit">
+      </form>
+    </aside>
+  </div>
 
-    <script src="js/community-script.js"></script>
+  <script src="/assessment/js/community.js"></script>
 </body>
 </html>
