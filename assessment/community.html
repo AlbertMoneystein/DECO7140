@@ -4,35 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generic Chat</title>
-  
+  <link rel="stylesheet" href="/assessment/css/style.css" />
   <link rel="stylesheet" href="/assessment/css/community.css">
+  <script src="js/menu.js"></script>
 </head>
 <body>
-  <div class="chatroom-grid">
-    <header class="chatroom-header">
-      <h1>Generic Chat Room</h1>
+  <header>
+    <!--<div class="logo">Fitness Website</div>-->
+    <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo">
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      <!-- Add hamburger menu button -->
+      <ul id="nav-links" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workout.html">Workout Plans</a></li>
+        <li><a href="nutrition.html">Nutrition Guide</a></li>
+        <!--<li><a href="#">Mental Health</a></li>-->
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="community-chatroom-grid">
+    <header class="community-chatroom-header">
+      <h1 class="community-h1">Generic Chat Room</h1>
     </header>
 
-    <main class="main-content" id="chat-list">
+    <main class="community-main-content" >
+  
+      <h2 class="community-h2">Chat History</h2>
+      <div id="community-chat-list">
       <!-- Dynamic chat posts will be loaded here -->
+      </div>
     </main>
 
-    <aside class="sidebar">
-      <h2>Post a new chat</h2>
-      <form id="chatPostForm">
-        <label for="person_name">Your Name:</label>
-        <input type="text" id="person_name" name="person_name" required>
+    <aside class="community-sidebar">
 
-        <label for="chat_post_title">Post Title:</label>
-        <input type="text" id="chat_post_title" name="chat_post_title" required>
+      <h2 class="community-h2">Post a new chat</h2>
 
-        <label for="chat_post_content">Post Content:</label>
-        <textarea id="chat_post_content" name="chat_post_content" required></textarea>
+      <div class="card-container">
+        <div class="card" >
+          <form id="community-chatPostForm" class="community-form">
+            <label for="person_name" class="community-label">Your Name:</label>
+            <input type="text" id="person_name" name="person_name" class="community-input" required>
+    
+            <label for="chat_post_title" class="community-label">Post Title:</label>
+            <input type="text" id="chat_post_title" name="chat_post_title" class="community-input" required>
+    
+            <label for="chat_post_content" class="community-label">Post Content:</label>
+            <textarea id="chat_post_content" name="chat_post_content" class="community-textarea" required></textarea>
+            
+            <div class="button-wrapper">
+              <br>
+              <br>
+              <button type="submit">Submit</button>
+            </div>
+            
+          </form>
+       </div>
+       
+       
 
-        <input type="submit" value="Submit">
-      </form>
+      </div>
+
+
+
     </aside>
   </div>
+  <footer>
+    <p>Wenbo's Work</p>
+  </footer>
 
   <script src="/assessment/js/community.js"></script>
 </body>

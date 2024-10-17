@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/menu.js"></script>
     <!-- 引用外部的 CSS 文件 -->
-    
   </head>
   <body>
     <header>
@@ -29,126 +28,179 @@
 
     <h1>Personalized Nutrition Plan</h1>
 
-    <div class="nutrition-grid-container">
-        <div class="section" style="grid-area: 1 / 1;"> <!-- 第一行第一列 -->
+    <section>
+      <div class="card-container">
+        <div class="card">
+          <div>
             <label for="goal">Goal:</label>
+            <br />
             <select id="goal">
-                <option value="muscle_gain">Muscle Gain</option>
-                <option value="weight_loss">Weight Loss</option>
-                <option value="weight_maintenance">Weight Maintenance</option>
+              <option value="muscle_gain">Muscle Gain</option>
+              <option value="weight_loss">Weight Loss</option>
+              <option value="weight_maintenance">Weight Maintenance</option>
             </select>
+          </div>
 
+          <div>
             <label for="language">Language:</label>
+            <br />
             <select id="language">
-                <option value="en" selected>English</option>
-                <option value="zh">Chinese</option>
-                <option value="es">Spanish</option>
+              <option value="en" selected>English</option>
+              <option value="zh">Chinese</option>
+              <option value="es">Spanish</option>
             </select>
+          </div>
 
+          <div>
             <label for="budget">Daily Meal Budget (RMB):</label>
-            <input type="number" id="budget" value="100" min="10" max="1000">
-            
+            <br />
+            <input type="number" id="budget" value="100" min="10" max="1000" />
+          </div>
         </div>
 
-        <div class="section" style="grid-area: 1 / 2;"> <!-- 第二行第二列 -->
+        <div class="card">
+          <div>
             <label for="age">Age:</label>
-            <input type="number" id="age" value="25" min="10" max="120">
+            <br />
+            <input type="number" id="age" value="25" min="10" max="120" />
+          </div>
 
+          <div>
             <label for="gender">Gender:</label>
+            <br />
             <select id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
             </select>
+          </div>
 
+          <div>
             <label for="height">Height (cm):</label>
-            <input type="number" id="height" value="170" min="100" max="250">
+            <br />
+            <input type="number" id="height" value="170" min="100" max="250" />
+          </div>
         </div>
-    
-        <div class="section" style="grid-area: 2 / 2;"> <!-- 第一行第二列 -->
-            <label for="diet">Diet Restrictions:</label>
-            <select id="diet" multiple>
-                <option value="vegan">Vegan</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="gluten_free">Gluten-Free</option>
-                <option value="keto">Keto</option>
-                <option value="paleo">Paleo</option>
-                <option value="dairy_free">Dairy-Free</option>
-            </select>
-            <small>Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
-        </div>
-    
-        <div class="section" style="grid-area: 1 / 3;"> <!-- 第一行第三列 -->
+
+        <div class="card">
+          <div>
             <label for="current_weight">Current Weight (kg):</label>
-            <input type="number" id="current_weight" value="70" min="30" max="300">
+            <br />
+            <input
+              type="number"
+              id="current_weight"
+              value="70"
+              min="30"
+              max="300"
+            />
+          </div>
 
+          <div>
             <label for="target_weight">Target Weight (kg):</label>
-            <input type="number" id="target_weight" value="75" min="30" max="300">
+            <br />
+            <input
+              type="number"
+              id="target_weight"
+              value="75"
+              min="30"
+              max="300"
+            />
+          </div>
 
+          <div>
             <label for="activity_level">Daily Activity Level:</label>
+            <br />
             <select id="activity_level">
-                <option value="low">Low</option>
-                <option value="moderate" selected>Moderate</option>
-                <option value="high">High</option>
+              <option value="low">Low</option>
+              <option value="moderate" selected>Moderate</option>
+              <option value="high">High</option>
             </select>
+          </div>
         </div>
-    
-        <div class="section" style="grid-area: 2 / 1;"> <!-- 第二行第一列 -->
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <label for="activity_type">Primary Activity Type:</label>
+          <br />
+          <select id="activity_type" multiple>
+            <option value="strength">Strength Training</option>
+            <option value="cardio">Cardio</option>
+            <option value="flexibility">Flexibility Training</option>
+          </select>
+          <br />
+          <small>Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
 
-
-            <label for="activity_type">Primary Activity Type:</label>
-            <select id="activity_type" multiple>
-                <option value="strength">Strength Training</option>
-                <option value="cardio">Cardio</option>
-                <option value="flexibility">Flexibility Training</option>
-            </select>
-            <small>Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
-        </div>
-    
-
-    
-
-    
-
-    
-        <div class="section" style="grid-area: 2 / 3;"> <!-- 第三行第三列 -->
-            <label for="allergies">Allergies:</label>
-            <select id="allergies" multiple>
-                <option value="nuts">Nuts</option>
-                <option value="shellfish">Shellfish</option>
-                <option value="soy">Soy</option>
-                <option value="dairy">Dairy</option>
-            </select>
-            <small>Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
-        </div>
-    
-        <div class="section" style="grid-area: 2 / 4;"> <!-- 第三行第四列 -->
+          <div>
             <label for="meal_preferences">Meal Preferences:</label>
+            <br />
             <select id="meal_preferences" multiple>
-                <option value="quick">Quick</option>
-                <option value="detailed">Detailed</option>
-                <option value="snacks">Snacks</option>
+              <option value="quick">Quick</option>
+              <option value="detailed">Detailed</option>
+              <option value="snacks">Snacks</option>
             </select>
-            <small>Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
+            <br />
+            <small
+              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
+            >
+          </div>
         </div>
-    
-        <div class="section" style="grid-area: 4 / 2;"> <!-- 第四行，跨越整行 -->
 
-            <button onclick="fetchNutritionPlan()">Get Nutrition Plan</button>
-
+        <div class="card">
+          <div>
+            <label for="diet">Diet Restrictions:</label>
+            <br />
+            <select id="diet" multiple>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="gluten_free">Gluten-Free</option>
+              <option value="keto">Keto</option>
+              <option value="paleo">Paleo</option>
+              <option value="dairy_free">Dairy-Free</option>
+            </select>
+            <br />
+            <small
+              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
+            >
+          </div>
+          <div>
+            <label for="allergies">Allergies:</label>
+            <br />
+            <select id="allergies" multiple>
+              <option value="nuts">Nuts</option>
+              <option value="shellfish">Shellfish</option>
+              <option value="soy">Soy</option>
+              <option value="dairy">Dairy</option>
+            </select>
+            <br />
+            <small
+              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
+            >
+          </div>
         </div>
-    </div>
-    
+      </div>
+    </section>
 
- 
+    <section>
+      <div class="card-container">
+        <div class="button-wrapper">
+          <button onclick="fetchNutritionPlan()">Get Nutrition Plan</button>
+        </div>
+      </div>
+    </section>
 
-    <div id="loading">Loading...</div>
-    <div id="error"></div>
-    <div id="content"></div>
+    <section>
+      <div class="card-container">
+        <div class="card">
+          <div id="loading">Loading...</div>
+          <div id="error"></div>
+          <div id="content"></div>
+        </div>
+      </div>
+    </section>
 
     <footer>
-        <p>Contact Us | Privacy Policy | Social Media</p>
-      </footer>
+      <p>Wenbo's Work</p>
+    </footer>
 
     <!-- 引用外部的 JavaScript 文件 -->
     <script src="js/nutrition.js"></script>

@@ -1,48 +1,53 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
 
-h1, h2 {
-  color: #333;
-}
 
-.chatroom-grid {
+
+.community-chatroom-grid {
   display: grid;
   grid-template-areas:
     "header header"
     "main sidebar";
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  gap: 50px;
+
+  /* Add border and margin */
+  border: 2px solid  #FFA726; /* Light gray border around the grid */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  margin: 20px; /* Space around the grid container */
+  padding: 10px; /* Optional: Inner space inside the border */
 }
 
-.chatroom-header {
+
+.community-chatroom-header {
   grid-area: header;
+  padding: 5px 5px;
+  background-color: #f4f6f9;
+  color: #333;
+  
 }
 
-.main-content {
+.community-main-content {
   grid-area: main;
   margin-bottom: 30px;
   max-height: 500px; /* Set the height limit for the chat history */
   overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
   padding-right: 10px; /* Optional: space for the scrollbar */
   border: 1px solid #ddd; /* Optional: border around the chat area */
+  border-radius: 8px;
 }
 
-
-.sidebar {
+.community-sidebar {
   grid-area: sidebar;
-  padding: 20px;
-  background-color: #f1f1f1; /* Light gray background color */
-  border: 2px solid #ccc; /* Border around the form */
+  padding: 0px;
+  
+  /* border: 2px solid #ccc; Border around the form */
   border-radius: 8px; /* Rounded corners for the border */
 }
 
-#chat-list {
+.community-chat-list {
   margin-bottom: 30px;
 }
 
-.chat-post {
+.community-chat-post {
   border: 1px solid #ddd;
   padding: 15px;
   margin: 10px 0;
@@ -50,43 +55,79 @@ h1, h2 {
   background-color: #f9f9f9;
 }
 
-.chat-post h3 {
+.community-chat-post h3 {
   margin: 0;
-  color: #0056b3;
+  
 }
 
-.chat-post p {
+.community-chat-post p {
   margin: 5px 0;
 }
 
-.chat-post small {
+.community-chat-post small {
   color: #777;
 }
 
-form {
+.community-form {
   display: flex;
   flex-direction: column;
 }
 
-label {
+.community-label {
   margin-top: 10px;
 }
 
-input, textarea {
+.community-input, .community-textarea {
   padding: 10px;
   margin-top: 5px;
   font-size: 16px;
 }
 
-input[type="submit"] {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
+
+/* Existing mobile styles in style.css */
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+    
+  /* Adjust the grid layout for smaller screens */
+  .community-chatroom-grid {
+      display: block; /* Stack the elements vertically */
+      margin: 10px;
+      padding: 5px;
+  }
+
+  .community-chatroom-header {
+      text-align: center; /* Center the header text */
+      padding: 10px 0;
+  }
+
+  .community-main-content {
+      margin-bottom: 20px;
+      max-height: none; /* Remove the fixed height limit on mobile */
+      padding: 10px;
+      border: 1px solid #ddd;
+  }
+
+  .community-sidebar {
+      padding: 10px;
+      margin-top: 20px; /* Add some space between the main content and the sidebar */
+      border: 1px solid #ddd;
+  }
+
+  .community-input, .community-textarea {
+      width: 100%; /* Ensure form inputs take full width */
+      box-sizing: border-box;
+  }
+
+  /* Center buttons and reduce padding on mobile */
+  button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+  }
+
+  .community-form {
+      margin-top: 10px;
+  }
 }
 
-input[type="submit"]:hover {
-  background-color: #45a049;
-}

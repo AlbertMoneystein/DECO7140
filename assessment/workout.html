@@ -1,111 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workout Plan Generator</title>
     <!-- 引入外部CSS文件 -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/menu.js"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <!--<div class="logo">Fitness Website</div>-->
-        <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo">
-        <nav>
-          <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-          <!-- Add hamburger menu button -->
-          <ul id="nav-links" class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="workout.html">Workout Plans</a></li>
-            <li><a href="nutrition.html">Nutrition Guide</a></li>
-            <!--<li><a href="#">Mental Health</a></li>-->
-            <li><a href="community.html">Community</a></li>
-          </ul>
-        </nav>
-      </header>
+      <!--<div class="logo">Fitness Website</div>-->
+      <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <!-- Add hamburger menu button -->
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="workout.html">Workout Plans</a></li>
+          <li><a href="nutrition.html">Nutrition Guide</a></li>
+          <!--<li><a href="#">Mental Health</a></li>-->
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <h1>Workout Plan Generator</h1>
 
-    <div class="form-section">
-        <label for="goal">Fitness Goal:</label>
-        <select id="goal">
-            <option value="weight_loss">Weight Loss</option>
-            <option value="muscle_gain">Muscle Gain</option>
-            <option value="endurance">Endurance</option>
-        </select>
-    </div>
+    <section>
+      <div class="card-container">
+        <div class="card">
+          <div>
+            <label for="goal">Fitness Goal:</label>
+            <br />
+            <select id="goal">
+              <option value="weight_loss">Weight Loss</option>
+              <option value="muscle_gain">Muscle Gain</option>
+              <option value="endurance">Endurance</option>
+            </select>
+          </div>
 
-    <div class="form-section">
-        <label for="fitness_level">Current Fitness Level:</label>
-        <select id="fitness_level">
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
-        </select>
-    </div>
+          <div>
+            <label for="fitness_level">Current Fitness Level:</label>
+            <br />
+            <select id="fitness_level">
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
 
-    <div class="form-section">
-        <label>Preferred Exercise Types:</label>
-        <div class="checkbox-group" id="exercise_types">
-            <label><input type="checkbox" value="cardio"> Cardio</label>
-            <label><input type="checkbox" value="strength"> Strength</label>
-            <label><input type="checkbox" value="flexibility"> Flexibility</label>
-            <label><input type="checkbox" value="balance"> Balance</label>
+          <div>
+            <label>Preferred Exercise Types:</label>
+
+            <div class="checkbox-group" id="exercise_types">
+              <label><input type="checkbox" value="cardio" /> Cardio</label>
+              <label><input type="checkbox" value="strength" /> Strength</label>
+              <br />
+              <label
+                ><input type="checkbox" value="flexibility" />
+                Flexibility</label
+              >
+              <label><input type="checkbox" value="balance" /> Balance</label>
+            </div>
+          </div>
         </div>
-    </div>
 
-    <div class="form-section">
-        <label>Available Equipment:</label>
-        <div class="checkbox-group" id="equipment_available">
-            <label><input type="checkbox" value="dumbbells"> Dumbbells</label>
-            <label><input type="checkbox" value="yoga_mat"> Yoga Mat</label>
-            <label><input type="checkbox" value="resistance_band"> Resistance Band</label>
-            <label><input type="checkbox" value="no_equipment"> No Equipment</label>
+        <div class="card">
+          <div>
+            <label for="days_per_week">Days per Week:</label>
+            <br />
+            <input type="number" id="days_per_week" min="1" max="7" value="4" />
+          </div>
+
+          <div>
+            <label for="session_duration"
+              >Workout Duration per Session (minutes):</label
+            >
+            <br />
+            <input
+              type="number"
+              id="session_duration"
+              min="10"
+              max="180"
+              value="45"
+            />
+          </div>
+
+          <div>
+            <label>Available Equipment:</label>
+            <div class="checkbox-group" id="equipment_available">
+              <label
+                ><input type="checkbox" value="dumbbells" /> Dumbbells</label
+              >
+              <label><input type="checkbox" value="yoga_mat" /> Yoga Mat</label>
+              <br />
+              <label
+                ><input type="checkbox" value="resistance_band" /> Resistance
+                Band</label
+              >
+              <label
+                ><input type="checkbox" value="no_equipment" /> No
+                Equipment</label
+              >
+            </div>
+          </div>
         </div>
-    </div>
 
-    <div class="form-section">
-        <label>Health Conditions:</label>
-        <div class="checkbox-group" id="health_conditions">
-            <label><input type="checkbox" value="knee_pain"> Knee Pain</label>
-            <label><input type="checkbox" value="back_pain"> Back Pain</label>
-            <label><input type="checkbox" value="heart_conditions"> Heart Conditions</label>
-            <label><input type="checkbox" value="none"> None</label>
+        <div class="card">
+          <div>
+            <label for="plan_duration_weeks">Plan Duration (weeks):</label>
+            <br />
+            <input
+              type="number"
+              id="plan_duration_weeks"
+              min="1"
+              max="52"
+              value="4"
+            />
+          </div>
+
+          <div>
+            <label for="lang">Language:</label>
+            <br />
+            <select id="lang">
+              <option value="en">English</option>
+              <option value="zh">Chinese</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Health Conditions:</label>
+            <div class="checkbox-group" id="health_conditions">
+              <label
+                ><input type="checkbox" value="knee_pain" /> Knee Pain</label
+              >
+              <label
+                ><input type="checkbox" value="back_pain" /> Back Pain</label
+              >
+              <br />
+              <label
+                ><input type="checkbox" value="heart_conditions" /> Heart
+                Conditions</label
+              >
+              <label><input type="checkbox" value="none" /> None</label>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="form-section">
-        <label for="days_per_week">Days per Week:</label>
-        <input type="number" id="days_per_week" min="1" max="7" value="4">
-    </div>
+    <section>
+      <div class="card-container">
+        <div class="button-wrapper">
+            <button id="generateBtn">Generate Workout Plan</button>
+        </div>
+    </section>
 
-    <div class="form-section">
-        <label for="session_duration">Workout Duration per Session (minutes):</label>
-        <input type="number" id="session_duration" min="10" max="180" value="45">
-    </div>
+    <section>
+        <div class="card-container">
+          
+   
+  
+        <div id="result"></div>
+          
+        </div>
+      </section>
 
-    <div class="form-section">
-        <label for="plan_duration_weeks">Plan Duration (weeks):</label>
-        <input type="number" id="plan_duration_weeks" min="1" max="52" value="4">
-    </div>
-
-    <div class="form-section">
-        <label for="lang">Language:</label>
-        <select id="lang">
-            <option value="en">English</option>
-            <option value="zh">Chinese</option>
-        </select>
-    </div>
-
-    <button id="generateBtn">Generate Workout Plan</button>
-
-    <div id="result"></div>
     <footer>
-        <p>Contact Us | Privacy Policy | Social Media</p>
-      </footer>
+      <p>Wenbo's Work</p>
+    </footer>
 
     <script src="js/workout.js"></script>
-</body>
+  </body>
 </html>

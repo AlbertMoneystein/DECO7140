@@ -1,5 +1,5 @@
 document.getElementById('generateBtn').addEventListener('click', function() {
-    // 获取用户输入的参数
+    // Get user input parameters
     const goal = document.getElementById('goal').value;
     const fitness_level = document.getElementById('fitness_level').value;
 
@@ -12,7 +12,7 @@ document.getElementById('generateBtn').addEventListener('click', function() {
     const plan_duration_weeks = parseInt(document.getElementById('plan_duration_weeks').value);
     const lang = document.getElementById('lang').value;
 
-    // 构建请求体
+    // Construct the request body
     const requestData = {
         goal: goal,
         fitness_level: fitness_level,
@@ -29,11 +29,11 @@ document.getElementById('generateBtn').addEventListener('click', function() {
         plan_duration_weeks: plan_duration_weeks
     };
 
-    // 清空之前的结果
+    // Clear previous results
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '<p>正在生成健身计划，请稍候...</p>';
+    resultDiv.innerHTML = '<p>Generating workout plan, please wait...</p>';
 
-    // 调用API
+    // Call API
     fetch('https://ai-workout-planner-exercise-fitness-nutrition-guide.p.rapidapi.com/generateWorkoutPlan?noqueue=1', {
         method: 'POST',
         headers: {
@@ -45,56 +45,38 @@ document.getElementById('generateBtn').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
-        // 检查是否有result字段
+        // Check if the result field exists
         if (data.result) {
+            console.log("Workout Plan Result:", data.result); // Log the result specifically
             displayWorkoutPlan(data.result);
         } else {
-            resultDiv.innerHTML = '<p>无法生成健身计划，请检查输入并重试。</p>';
+            console.log("No result found in the response."); // Log if there's no result
+            resultDiv.innerHTML = '<p>Unable to generate workout plan, please check your inputs and try again.</p>';
         }
     })
-
-
-    .then(data => {
-        console.log("API response data:"); // Log the full response from the API
-     
-        // 检查是否有result字段 (Check if result exists)
-        if (data.result) {
-           console.log("Workout Plan Result:", data.result); // Log the result specifically
-           displayWorkoutPlan(data.result);
-        } else {
-           console.log("No result found in the response."); // Log if there's no result
-           resultDiv.innerHTML = '<p>无法生成健身计划，请检查输入并重试。</p>';
-        }
-     })
-
-
-
-
-
     .catch(error => {
         console.error('Error:', error);
-        alert('生成健身计划时出错，请稍后重试。');
+        alert('An error occurred while generating the workout plan. Please try again later.');
     });
 });
 
 
-
-// 新增函数，用于格式化并显示健身计划
+// Function to format and display the workout plan
 function displayWorkoutPlan(plan) {
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = ''; // 清空内容
+    resultDiv.innerHTML = ''; // Clear content
 
-    // 创建标题
+    // Create title
     const title = document.createElement('h2');
-    title.textContent = `您的${plan.total_weeks}周健身计划`;
+    title.textContent = `Your ${plan.total_weeks}-week workout plan`;
     resultDiv.appendChild(title);
 
-    // 显示目标和健身水平
+    // Display goal and fitness level
     const info = document.createElement('p');
-    info.textContent = `目标：${translateGoal(plan.goal)} | 健身水平：${translateFitnessLevel(plan.fitness_level)} | 每周锻炼${plan.schedule.days_per_week}天，每次${plan.schedule.session_duration}分钟`;
+    info.textContent = `Goal: ${translateGoal(plan.goal)} | Fitness Level: ${translateFitnessLevel(plan.fitness_level)} | Work out ${plan.schedule.days_per_week} days per week, ${plan.schedule.session_duration} minutes per session`;
     resultDiv.appendChild(info);
 
-    // 遍历每一天的计划
+    // Loop through each day's plan
     plan.exercises.forEach(dayPlan => {
         const dayDiv = document.createElement('div');
         dayDiv.classList.add('day-plan');
@@ -103,24 +85,24 @@ function displayWorkoutPlan(plan) {
         dayTitle.textContent = dayPlan.day;
         dayDiv.appendChild(dayTitle);
 
-        // 创建一个列表，展示当天的所有练习
+        // Create a list to show all exercises for the day
         const exerciseList = document.createElement('ul');
 
         dayPlan.exercises.forEach(exercise => {
             const exerciseItem = document.createElement('li');
 
-            // 创建练习名称
+            // Create exercise name
             const exerciseName = document.createElement('strong');
             exerciseName.textContent = exercise.name;
             exerciseItem.appendChild(exerciseName);
 
-            // 创建练习详情
+            // Create exercise details
             const exerciseDetails = document.createElement('p');
             exerciseDetails.innerHTML = `
-                ${exercise.duration ? `时长：${exercise.duration}` : ''}
-                ${exercise.repetitions ? `<br>重复次数：${exercise.repetitions}` : ''}
-                ${exercise.sets ? `<br>组数：${exercise.sets}` : ''}
-                ${exercise.equipment ? `<br>器械：${translateEquipment(exercise.equipment)}` : ''}
+                ${exercise.duration ? `Duration: ${exercise.duration}` : ''}
+                ${exercise.repetitions ? `<br>Repetitions: ${exercise.repetitions}` : ''}
+                ${exercise.sets ? `<br>Sets: ${exercise.sets}` : ''}
+                ${exercise.equipment ? `<br>Equipment: ${translateEquipment(exercise.equipment)}` : ''}
             `;
             exerciseItem.appendChild(exerciseDetails);
 
@@ -132,33 +114,33 @@ function displayWorkoutPlan(plan) {
     });
 }
 
-// 辅助函数：翻译目标
+// Helper function: translate goal
 function translateGoal(goal) {
     const goals = {
-        'weight_loss': '减肥',
-        'muscle_gain': '增肌',
-        'endurance': '耐力'
+        'weight_loss': 'Weight Loss',
+        'muscle_gain': 'Muscle Gain',
+        'endurance': 'Endurance'
     };
     return goals[goal] || goal;
 }
 
-// 辅助函数：翻译健身水平
+// Helper function: translate fitness level
 function translateFitnessLevel(level) {
     const levels = {
-        'beginner': '初学者',
-        'intermediate': '中级',
-        'advanced': '高级'
+        'beginner': 'Beginner',
+        'intermediate': 'Intermediate',
+        'advanced': 'Advanced'
     };
     return levels[level] || level;
 }
 
-// 辅助函数：翻译器械
+// Helper function: translate equipment
 function translateEquipment(equipment) {
     const equipments = {
-        'dumbbells': '哑铃',
-        'yoga_mat': '瑜伽垫',
-        'resistance_band': '弹力带',
-        'no_equipment': '无器械'
+        'dumbbells': 'Dumbbells',
+        'yoga_mat': 'Yoga Mat',
+        'resistance_band': 'Resistance Band',
+        'no_equipment': 'No Equipment'
     };
     return equipments[equipment] || equipment;
 }

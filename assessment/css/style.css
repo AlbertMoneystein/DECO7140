@@ -1,7 +1,7 @@
 /* 全局样式 */
 html, body {
     height: 100%;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #f4f6f9;
@@ -13,6 +13,7 @@ html, body {
 
 /* 头部导航栏 */
 header {
+
     background-color: #3A7D44;
     color: white;
     padding: 30px 0;
@@ -98,9 +99,9 @@ h2 {
 /* 卡片容器样式 */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
     gap: 20px;
-    padding: 0 50px;
+    padding: 10px 50px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -139,20 +140,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.card button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.card button:hover {
-    background-color: #367a38;
-}
 
 /* 通用按钮样式 */
 button {
@@ -161,12 +149,21 @@ button {
     border: none;
     padding: 12px 24px;
     font-size: 1em;
+    cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #ff4500;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center;     /* Centers the button vertically within the wrapper */
+    height: 100%;            /* Ensures the wrapper takes up full height of its parent */
+
 }
 
 /* 页脚样式 */
@@ -222,7 +219,7 @@ main {
 
 /* 主页的样式 */
 .home-hero {
-    background-image: url('/assets/background-image.jpg');
+    background-image: url('/assessment/assets/background-image.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -304,13 +301,7 @@ main {
     text-align: center;
 }
 
-.nutrition-grid-container {
-    display: grid;
-    grid-template-columns: fit-content(200px) fit-content(200px) auto auto;
-    grid-template-rows: fit-content(100px);
-    gap: 20px;
-    padding: 20px;
-}
+
 
 .section {
     padding: 10px;
@@ -332,3 +323,8 @@ input {
     width: fit-content;
     max-width: 100%;
 }
+
+.form {
+    display: flex;
+    flex-direction: row;
+  }

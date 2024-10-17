@@ -66,3 +66,10 @@ function stripHtmlTags(str) {
 
 // 页面加载时获取推荐的健身计划
 fetchRecommendedWorkouts();
+
+
+function scrollToWorkout() {
+    document.getElementById('workout-plan').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
