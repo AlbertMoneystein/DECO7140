@@ -1,0 +1,211 @@
+button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+
+/* 按钮居中样式 */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* 导航栏样式 */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #367a38;
+}
+
+/* 卡片组件样式 */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    gap: 20px;
+    padding: 10px 50px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.card {
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+
+
+
+
+/* 表单基础样式 */
+input, textarea, select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+select {
+    width: auto;
+    min-width: 5px;
+    max-width: 40%;
+}
+
+input {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  
+/* nutrition page 样式 */
+#loading {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+
+
+/* 主页的样式 */
+.home-hero {
+    background-image: url('/assessment/assets/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 150px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+.home-hero button {
+    padding: 15px 30px;
+    background-color: #FFA726;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 汉堡菜单按钮样式 */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding-right: 20px;
+}
+
+
+
+.community-chat-list {
+    margin-bottom: 30px;
+  }
+  
+  .community-chat-post {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .community-chat-post h3 {
+    margin: 0;
+    
+  }
+  
+  .community-chat-post p {
+    margin: 5px 0;
+  }
+  
+  .community-chat-post small {
+    color: #777;
+  }
+  
+  .community-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .community-label {
+    margin-top: 10px;
+  }
+  
+  .community-input, .community-textarea {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+
+
+
+
+
+

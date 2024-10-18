@@ -1,0 +1,197 @@
+/* 头部导航栏布局 */
+header {
+    background-color: #3A7D44;
+    color: white;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 30px;
+    height: 50px;
+}
+
+/* 确保内容填满页面，防止 footer 悬空 */
+main {
+    min-height: calc(100vh - 60px);
+    padding-bottom: 60px;
+}
+
+
+
+/* nutrition page 样式 */
+.section {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+
+/* 页脚布局 */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* 社区页面布局 */
+.community-chatroom-grid {
+    display: grid;
+    grid-template-areas: "header header" "main sidebar";
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #FFA726;
+    border-radius: 8px;
+}
+
+
+.community-chatroom-header {
+    grid-area: header;
+    padding: 5px 5px;
+    background-color: #f4f6f9;
+    color: #333;
+    
+  }
+  
+  .community-main-content {
+    grid-area: main;
+    margin-bottom: 30px;
+    max-height: 500px; /* Set the height limit for the chat history */
+    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
+    padding-right: 10px; /* Optional: space for the scrollbar */
+    border: 1px solid #ddd; /* Optional: border around the chat area */
+    border-radius: 8px;
+  }
+  
+  .community-sidebar {
+    grid-area: sidebar;
+    padding: 0px;
+    
+    /* border: 2px solid #ccc; Border around the form */
+    border-radius: 8px; /* Rounded corners for the border */
+  }
+
+
+
+
+
+
+
+
+
+
+/* 响应式设计 - 适用于屏幕宽度小于768px */
+@media (max-width: 768px) {
+    /* 全局样式调整 */
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    /* 主内容和卡片布局 */
+
+    .card-container {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    /* 导航栏样式 */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 3%;
+        background-color: #4CAF50;
+        width: 20%;
+        z-index: 1000;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 5px 0;
+        width: 90%;
+    }
+
+    nav ul li a {
+        padding: 5px 2px;
+        font-size: 1em;
+        color: white;
+        background-color: #4CAF50;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #367a38;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 社区页面样式调整 */
+    .community-chatroom-grid {
+        display: block; /* 将元素纵向堆叠 */
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .community-chatroom-header {
+        text-align: center; /* 标题居中 */
+        padding: 10px 0;
+    }
+
+    .community-main-content {
+        margin-bottom: 20px;
+        max-height: none; /* 移除固定高度限制 */
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .community-sidebar {
+        padding: 10px;
+        margin-top: 20px; /* 主内容和侧边栏之间添加间距 */
+        border: 1px solid #ddd;
+    }
+
+    .community-input, .community-textarea {
+        width: 100%; /* 确保表单输入框占满宽度 */
+        box-sizing: border-box;
+    }
+
+    .community-form {
+        margin-top: 10px;
+    }
+}

@@ -1,7 +1,7 @@
-/* 全局样式 */
+/* 全局字体和基础样式 */
 html, body {
     height: 100%;
-    margin: 0px;
+    margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #f4f6f9;
@@ -11,44 +11,78 @@ html, body {
     overflow-x: hidden;
 }
 
-/* 头部导航栏 */
-header {
-    background-color: #3A7D44;
-    color: white;
-    padding: 30px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+/* 全局标题样式 */
+/* 全局标题样式 */
+/* 全局标题样式 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* 统一使用无衬线字体 */
+    color: #2c3e50; /* 统一的深蓝灰色，增强优雅感 */
+    margin-bottom: 20px; /* 保持标题与下面内容的间距 */
+    font-weight: 700; /* 标题默认使用加粗字体 */
+    line-height: 1.3; /* 提供充足的行高，确保可读性 */
+    text-align: center; /* 统一居中对齐，增强视觉一致性 */
+    letter-spacing: 1px; /* 轻微增加字母间距，提供现代感 */
 }
 
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    padding-left: 30px;
-    height: 50px;
+/* H1 标题：主要标题，视觉上最强的层级 */
+h1 {
+    font-size: 2.5rem; /* 字体大小调整为 2.5rem，约40px */
+    letter-spacing: 1.2px; /* 增加字母间距，提升视觉冲击力 */
+    text-transform: uppercase; /* 全部字母大写，增强重要性 */
+    margin-top: 30px; /* 提供更大的顶部间距，与页面其他元素拉开距离 */
+    margin-bottom: 25px; /* 增加下方距离，与正文形成对比 */
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+/* H2 标题：次要标题，层级稍弱但仍然引人注目 */
+h2 {
+    font-size: 2rem; /* 字体大小调整为 2rem，约32px */
+    font-weight: 600; /* 使用稍微轻一点的加粗 */
+    margin-bottom: 25px; /* 提供与下方内容的空间 */
+    position: relative; /* 为下划线效果定位 */
 }
 
-nav ul li {
-    margin-right: 20px;
+/* 为 H2 添加渐变装饰线条，增强视觉层次 */
+h2::before {
+    content: ''; /* 插入伪元素 */
+    position: absolute; /* 使下划线位置相对 H2 元素定位 */
+    left: 50%; /* 将线条居中 */
+    transform: translateX(-50%); /* 确保线条完全居中 */
+    bottom: -10px; /* 下划线距离文本10px */
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #f39c12, #e74c3c); /* 使用渐变色 */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+/* H3 标题：小标题，保持与上层一致但层次更弱 */
+h3 {
+    font-size: 1.75rem; /* 字体大小调整为 1.75rem，约28px */
+    font-weight: 500; /* 使用较轻的加粗，表现更柔和 */
+    margin-bottom: 20px; /* 减小与下方的间距 */
 }
 
-nav ul li a:hover {
-    background-color: #367a38;
+/* H4 标题：次级小标题，适用于细分内容 */
+h4 {
+    font-size: 1.5rem; /* 字体大小调整为 1.5rem，约24px */
+    font-weight: 500;
+    margin-bottom: 18px;
 }
+
+/* H5 标题：适合用于较小的标题或补充性内容 */
+h5 {
+    font-size: 1.25rem; /* 字体大小调整为 1.25rem，约20px */
+    font-weight: 400; /* 更轻的字体，适合弱化的层级 */
+    margin-bottom: 15px;
+}
+
+/* H6 标题：最弱的标题，用于附加信息 */
+h6 {
+    font-size: 1rem; /* 字体大小调整为 1rem，约16px */
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #777; /* 使用较浅的颜色，表现信息的次要性 */
+}
+
+
+
+
