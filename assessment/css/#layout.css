@@ -1,8 +1,23 @@
+/* Global color variables */
+:root {
+    --primary-bg-color: #3A7D44; /* Primary background color for header */
+    --secondary-bg-color: #333; /* Secondary background color for footer */
+    --accent-bg-color: #FFA726; /* Accent background color for borders, etc. */
+    --light-bg-color: #f9f9f9; /* Light background for sections */
+    --dark-text-color: white; /* White text for dark backgrounds */
+    --light-text-color: #333; /* Dark text for light backgrounds */
+    --sub-text-color: #777; /* Subheading and footer text color */
+    --border-color: #ccc; /* Border color */
+    --odd-bg-color: #f0f0f0; /* Odd item background color */
+    --even-bg-color: #e0e0e0; /* Even item background color */
+    --hover-bg-color: #367a38; /* Background color for hover state */
+}
+
 /* Header navigation layout */
 header {
     position: sticky;
-    background-color: var(--primary-bg-color);
-    color: var(--dark-text-color);
+    background-color: var(--primary-bg-color); /* Use variable */
+    color: var(--dark-text-color); /* Use variable */
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
@@ -26,9 +41,9 @@ main {
 /* Nutrition page styles */
 .section {
     padding: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color); /* Use border variable */
     border-radius: 5px;
-    background-color: var(--light-bg-color);
+    background-color: var(--light-bg-color); /* Use light background */
     display: flex;
     grid-template-columns: 1fr;
     row-gap: 10px;
@@ -49,8 +64,8 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    background-color: var(--secondary-bg-color);
-    color: var(--dark-text-color);
+    background-color: var(--secondary-bg-color); /* Use secondary background */
+    color: var(--dark-text-color); /* White text for footer */
     padding: 20px 0;
     text-align: center;
 }
@@ -67,15 +82,15 @@ footer p {
     gap: 50px;
     margin: 20px;
     padding: 10px;
-    border: 2px solid var(--accent-bg-color);
+    border: 2px solid var(--accent-bg-color); /* Use accent color */
     border-radius: 8px;
 }
 
 .community-chatroom-header {
     grid-area: header;
     padding: 5px 5px;
-    background-color: var(--light-bg-color);
-    color: var(--light-text-color);
+    background-color: var(--light-bg-color); /* Use light background */
+    color: var(--light-text-color); /* Dark text for header */
 }
 
 .community-main-content {
@@ -84,7 +99,7 @@ footer p {
     max-height: 500px;
     overflow-y: auto;
     padding-right: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color); /* Use border color */
     border-radius: 8px;
 }
 
@@ -98,17 +113,17 @@ footer p {
 .item, .meal-item, .chat-item {
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color); /* Use border color */
     border-radius: 5px;
 }
 
 /* Alternate item background colors using nth-child */
 .meal-item:nth-child(odd), .chat-item:nth-child(odd) {
-    background-color: var(--odd-bg-color);
+    background-color: var(--odd-bg-color); /* Use odd item background color */
 }
 
 .meal-item:nth-child(even), .chat-item:nth-child(even) {
-    background-color: var(--even-bg-color);
+    background-color: var(--even-bg-color); /* Use even item background color */
 }
 
 /* day-plan styles for flexbox layout */
@@ -126,17 +141,17 @@ footer p {
     margin: 5px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid var(--border-color);
-    background-color: var(--light-bg-color);
+    border: 1px solid var(--border-color); /* Use border color */
+    background-color: var(--light-bg-color); /* Use light background */
 }
 
 /* Alternate colors for day-plan list items */
 .day-plan ul li:nth-child(odd) {
-    background-color: var(--odd-bg-color);
+    background-color: var(--odd-bg-color); /* Use odd background */
 }
 
 .day-plan ul li:nth-child(even) {
-    background-color: var(--even-bg-color);
+    background-color: var(--even-bg-color); /* Use even background */
 }
 
 /* Responsive design for screens smaller than 768px */
@@ -168,7 +183,7 @@ footer p {
         position: absolute;
         top: 60px;
         right: 3%;
-        background-color: var(--primary-bg-color);
+        background-color: var(--primary-bg-color); /* Use primary background */
         width: 20%;
         z-index: 1000;
     }
@@ -182,13 +197,13 @@ footer p {
     nav ul li a {
         padding: 5px 2px;
         font-size: 1em;
-        color: var(--dark-text-color);
-        background-color: var(--primary-bg-color);
+        color: var(--dark-text-color); /* Use white text */
+        background-color: var(--primary-bg-color); /* Use primary background */
         transition: background-color 0.3s ease;
     }
 
     nav ul li a:hover {
-        background-color: var(--hover-bg-color);
+        background-color: var(--hover-bg-color); /* Use hover color */
     }
 
     .hamburger {
@@ -216,13 +231,13 @@ footer p {
         margin-bottom: 20px;
         max-height: none;
         padding: 10px;
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--border-color); /* Use border color */
     }
 
     .community-sidebar {
         padding: 10px;
         margin-top: 20px;
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--border-color); /* Use border color */
     }
 
     .community-input, .community-textarea {

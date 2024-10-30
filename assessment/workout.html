@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
 
-    <script src="js/menu.js"></script>
+    
   </head>
   <body>
     <header>
@@ -22,17 +22,35 @@
         <!-- Add hamburger menu button -->
         <ul id="nav-links" class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="workout.html">Workout Plans</a></li>
+          <li><a href="workout.html">Workout Plan</a></li>
           <li><a href="nutrition.html">Nutrition Guide</a></li>
           <!--<li><a href="#">Mental Health</a></li>-->
           <li><a href="community.html">Community</a></li>
         </ul>
       </nav>
     </header>
+           
+    
+    <div class="image-container">
+      <img src="assets/workout_plan_part1.png" alt="workoutplan decoration image" />
+    </div>
+    
+
+
+
+
+
+     
+ 
+
+
+  
+
 
     <h1>Workout Plan Generator</h1>
 
     <section>
+
       <div class="card-container">
         <div class="card">
           <div>
@@ -158,17 +176,25 @@
     <section>
       <div class="card-container">
         <div class="button-wrapper">
-            <button id="generateBtn">Generate Workout Plan</button>
+            <button id="generateWorkoutPlanBtn">Generate Workout Plan</button>
         </div>
     </section>
 
     <section>
-        <div class="card-container">
-          
-   
-  
-        <div id="result"></div>
-          
+        <div class="card-container">         
+          <div class="card">  
+          <div id="information-before-loading">
+            <h5>
+              Your workout plan will appear here.
+            </h5>
+
+            Please be patient while your workout plan is being generated—the API likes to take its sweet time!
+          </div>
+          <div id="loading">Loading...</div>
+          <div id="error"></div>
+          <div id="content"></div>
+
+         </div>
         </div>
       </section>
 
@@ -176,6 +202,7 @@
       <p>Wenbo's Work</p>
     </footer>
 
+    <script src="js/sharedModule.js"></script>
     <script src="js/workout.js"></script>
   </body>
 </html>

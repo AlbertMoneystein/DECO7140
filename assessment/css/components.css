@@ -15,7 +15,7 @@ button:hover {
 }
 
 
-/* 按钮居中样式 */
+/* Button centering styles */
 .button-wrapper {
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@ button:hover {
     height: 100%;
 }
 
-/* 导航栏样式 */
+/* Navigation bar styles */
 nav ul {
     list-style: none;
     margin: 0;
@@ -48,7 +48,7 @@ nav ul li a:hover {
     background-color: #367a38;
 }
 
-/* 卡片组件样式 */
+/* Card component styles */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
@@ -72,20 +72,18 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+
+
 .card img {
-    width: 80%;
-    max-width: 300px;
+    width: 100%;
     height: auto;
     border-radius: 10px;
-    display: block;
-    margin: 0 auto 15px;
+    display: flex;
+    margin: 0 auto 0px;
 }
 
 
-
-
-
-/* 表单基础样式 */
+/* Form base styles */
 input, textarea, select {
     padding: 10px;
     margin-top: 5px;
@@ -94,8 +92,6 @@ input, textarea, select {
     width: 100%;
     box-sizing: border-box;
 }
-
-
 
 select {
     width: auto;
@@ -111,11 +107,9 @@ input {
 .form {
     display: flex;
     flex-direction: row;
-  }
+}
 
-
-  
-/* nutrition page 样式 */
+/* Nutrition page styles */
 #loading {
     display: none;
     margin-top: 20px;
@@ -125,8 +119,7 @@ input {
 }
 
 
-
-/* 主页的样式 */
+/* Homepage styles */
 .home-hero {
     background-image: url('/assessment/assets/background-image.jpg');
     background-size: cover;
@@ -152,7 +145,7 @@ input {
     transition: background-color 0.3s ease;
 }
 
-/* 汉堡菜单按钮样式 */
+/* Hamburger menu button styles */
 .hamburger {
     display: none;
     font-size: 30px;
@@ -162,50 +155,52 @@ input {
 }
 
 
-
+/* Community chat styles */
 .community-chat-list {
     margin-bottom: 30px;
-  }
+}
   
-  .community-chat-post {
+.community-chat-post {
     border: 1px solid #ddd;
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
     background-color: #f9f9f9;
-  }
+}
   
-  .community-chat-post h3 {
+.community-chat-post h3 {
     margin: 0;
-    
-  }
+}
   
-  .community-chat-post p {
+.community-chat-post p {
     margin: 5px 0;
-  }
+}
   
-  .community-chat-post small {
+.community-chat-post small {
     color: #777;
-  }
+}
   
-  .community-form {
+.community-form {
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .community-label {
+.community-label {
     margin-top: 10px;
-  }
+}
   
-  .community-input, .community-textarea {
+.community-input, .community-textarea {
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
-  }
+}
 
-
-
-
-
-
+.community-h2 {
+    position: sticky;
+    top: 0; /* 距离顶部为 0 */
+    background-color: white; /* 背景颜色，防止内容重叠 */
+    z-index: 10; /* 确保 h2 位于其他元素之上 */
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* 添加底部边框以区分内容 */
+}
 

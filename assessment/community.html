@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/layout.css" />
   
   
-  <script src="js/menu.js"></script>
+
 </head>
 <body>
   <header>
@@ -24,22 +24,31 @@
       <!-- Add hamburger menu button -->
       <ul id="nav-links" class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="workout.html">Workout Plans</a></li>
+        <li><a href="workout.html">Workout Plan</a></li>
         <li><a href="nutrition.html">Nutrition Guide</a></li>
         <!--<li><a href="#">Mental Health</a></li>-->
         <li><a href="community.html">Community</a></li>
       </ul>
     </nav>
   </header>
+ 
+  <div class="image-container">
+    <img src="assets/chat_room_vertical_part_1.png" alt="nutrition guide decoration" />
+  </div>
+
+  <h1>Chat Room</h1>
+
   
   <div class="community-chatroom-grid">
+    <!--
     <header class="community-chatroom-header">
       <h1 class="community-h1">Generic Chat Room</h1>
-    </header>
+    </header>-->
 
     <main class="community-main-content" >
+
   
-      <h2 class="community-h2">Chat History</h2>
+      <h4 class="community-h2">Chat History</h4>
       <div id="community-chat-list">
       <!-- Dynamic chat posts will be loaded here -->
       </div>
@@ -47,7 +56,7 @@
 
     <aside class="community-sidebar">
 
-      <h2 class="community-h2">Post a new chat</h2>
+      <h4 class="community-h2">Post a new chat</h4>
 
       <div class="card-container">
         <div class="card" >
@@ -82,6 +91,7 @@
     <p>Wenbo's Work</p>
   </footer>
 
-  <script src="/assessment/js/community.js"></script>
+  <script src="js/community.js"></script>
+  <script src="js/sharedModule.js"></script>
 </body>
 </html>

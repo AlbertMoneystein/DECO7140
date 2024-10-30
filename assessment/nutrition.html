@@ -8,10 +8,10 @@
     <!--<link rel="stylesheet" href="css/style.css" />-->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
-    
+
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
-    <script src="js/menu.js"></script>
+
     <!-- 引用外部的 CSS 文件 -->
   </head>
   <body>
@@ -23,15 +23,21 @@
         <!-- Add hamburger menu button -->
         <ul id="nav-links" class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="workout.html">Workout Plans</a></li>
+          <li><a href="workout.html">Workout Plan</a></li>
           <li><a href="nutrition.html">Nutrition Guide</a></li>
           <!--<li><a href="#">Mental Health</a></li>-->
           <li><a href="community.html">Community</a></li>
         </ul>
       </nav>
     </header>
+    <div class="image-container">
+      <img
+        src="assets/nutrition_guide_vertical_part_3.png"
+        alt="nutrition guide decoration"
+      />
+    </div>
 
-    <h1>Personalized Nutrition Plan</h1>
+    <h1>Nutrition Guide Generator</h1>
 
     <section>
       <div class="card-container">
@@ -57,19 +63,48 @@
           </div>
 
           <div>
+            <label for="activity_type">Primary Activity Type:</label>
+            <br />
+            <select id="activity_type" multiple>
+              <option value="strength">Strength Training</option>
+              <option value="cardio">Cardio</option>
+              <option value="flexibility">Flexibility Training</option>
+            </select>
+            <br />
+            <small
+              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
+            >
+          </div>
+        </div>
+        <div class="card">
+          <div>
             <label for="budget">Daily Meal Budget (RMB):</label>
             <br />
             <input type="number" id="budget" value="100" min="10" max="1000" />
           </div>
-        </div>
 
-        <div class="card">
           <div>
             <label for="age">Age:</label>
             <br />
             <input type="number" id="age" value="25" min="10" max="120" />
           </div>
 
+          <div>
+            <label for="meal_preferences">Meal Preferences:</label>
+            <br />
+            <select id="meal_preferences" multiple>
+              <option value="quick">Quick</option>
+              <option value="detailed">Detailed</option>
+              <option value="snacks">Snacks</option>
+            </select>
+            <br />
+            <small
+              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
+            >
+          </div>
+        </div>
+
+        <div class="card">
           <div>
             <label for="gender">Gender:</label>
             <br />
@@ -85,8 +120,23 @@
             <br />
             <input type="number" id="height" value="170" min="100" max="250" />
           </div>
+          <div>
+            <label for="diet">Diet Restrictions:</label>
+            <br />
+            <select id="diet" multiple>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="gluten_free">Gluten-Free</option>
+              <option value="keto">Keto</option>
+              <option value="paleo">Paleo</option>
+              <option value="dairy_free">Dairy-Free</option>
+            </select>
+            <br />
+            <small
+              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
+            >
+          </div>
         </div>
-
         <div class="card">
           <div>
             <label for="current_weight">Current Weight (kg):</label>
@@ -121,52 +171,6 @@
               <option value="high">High</option>
             </select>
           </div>
-        </div>
-      </div>
-      <div class="card-container">
-        <div class="card">
-          <label for="activity_type">Primary Activity Type:</label>
-          <br />
-          <select id="activity_type" multiple>
-            <option value="strength">Strength Training</option>
-            <option value="cardio">Cardio</option>
-            <option value="flexibility">Flexibility Training</option>
-          </select>
-          <br />
-          <small>Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
-
-          <div>
-            <label for="meal_preferences">Meal Preferences:</label>
-            <br />
-            <select id="meal_preferences" multiple>
-              <option value="quick">Quick</option>
-              <option value="detailed">Detailed</option>
-              <option value="snacks">Snacks</option>
-            </select>
-            <br />
-            <small
-              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
-            >
-          </div>
-        </div>
-
-        <div class="card">
-          <div>
-            <label for="diet">Diet Restrictions:</label>
-            <br />
-            <select id="diet" multiple>
-              <option value="vegan">Vegan</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="gluten_free">Gluten-Free</option>
-              <option value="keto">Keto</option>
-              <option value="paleo">Paleo</option>
-              <option value="dairy_free">Dairy-Free</option>
-            </select>
-            <br />
-            <small
-              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
-            >
-          </div>
           <div>
             <label for="allergies">Allergies:</label>
             <br />
@@ -188,7 +192,7 @@
     <section>
       <div class="card-container">
         <div class="button-wrapper">
-          <button onclick="fetchNutritionPlan()">Get Nutrition Plan</button>
+          <button id="generateNutritionPlanBtn">Generate Nutrition Guide</button>
         </div>
       </div>
     </section>
@@ -196,6 +200,11 @@
     <section>
       <div class="card-container">
         <div class="card">
+          <div id="information-before-loading">
+            <h5>Your nutrition guide will appear here.</h5>
+            Please be patient while your nutrition guide is being generated—the
+            API likes to take its sweet time!
+          </div>
           <div id="loading">Loading...</div>
           <div id="error"></div>
           <div id="content"></div>
@@ -208,6 +217,7 @@
     </footer>
 
     <!-- 引用外部的 JavaScript 文件 -->
+    <script src="js/sharedModule.js"></script>
     <script src="js/nutrition.js"></script>
   </body>
 </html>
