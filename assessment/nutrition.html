@@ -5,47 +5,47 @@
     <title>Personalized Nutrition Plan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workout Plans</title>
-    <!--<link rel="stylesheet" href="css/style.css" />-->
+    <!-- External CSS files for styling the page layout and design -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
-
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
-
-    <!-- 引用外部的 CSS 文件 -->
   </head>
+
   <body>
+    <!-- Header section with logo and navigation menu -->
     <header>
-      <!--<div class="logo">Fitness Website</div>-->
       <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
       <nav>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <!-- Add hamburger menu button -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">&#9776;</div>
+        <!-- Navigation menu for different pages -->
         <ul id="nav-links" class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="workout.html">Workout Plan</a></li>
           <li><a href="nutrition.html">Nutrition Guide</a></li>
-          <!--<li><a href="#">Mental Health</a></li>-->
           <li><a href="community.html">Community</a></li>
         </ul>
       </nav>
     </header>
+
+    <!-- Decorative image section for visual enhancement -->
     <div class="image-container">
-      <img
-        src="assets/nutrition_guide_vertical_part_3.png"
-        alt="nutrition guide decoration"
-      />
+      <img src="assets/nutrition_guide_vertical_part_3.png" alt="Nutrition guide visual decoration" />
     </div>
 
+    <!-- Main title of the Nutrition Guide page -->
     <h1>Nutrition Guide Generator</h1>
 
+    <!-- Section to allow users to input their nutrition preferences -->
     <section>
       <div class="card-container">
-        <div class="card">
+        <!-- Card with dropdowns for goal, language, and activity type -->
+        <fieldset class="card" aria-labelledby="goal-group">
+          <legend id="goal-group">Nutrition Preferences</legend>
           <div>
             <label for="goal">Goal:</label>
-            <br />
-            <select id="goal">
+            <br>
+            <select id="goal"  class="responsive-select" aria-required="true">
               <option value="muscle_gain">Muscle Gain</option>
               <option value="weight_loss">Weight Loss</option>
               <option value="weight_maintenance">Weight Maintenance</option>
@@ -54,8 +54,8 @@
 
           <div>
             <label for="language">Language:</label>
-            <br />
-            <select id="language">
+            <br>
+            <select id="language"  class="responsive-select" aria-required="true">
               <option value="en" selected>English</option>
               <option value="zh">Chinese</option>
               <option value="es">Spanish</option>
@@ -63,52 +63,53 @@
           </div>
 
           <div>
-            <label for="activity_type">Primary Activity Type:</label>
-            <br />
-            <select id="activity_type" multiple>
+            <label for="activity_type" aria-describedby="activity-type-instructions">Primary Activity Type:</label>
+            <br>
+            <select id="activity_type" multiple  class="responsive-select" aria-describedby="activity-type-instructions">
               <option value="strength">Strength Training</option>
               <option value="cardio">Cardio</option>
               <option value="flexibility">Flexibility Training</option>
             </select>
-            <br />
-            <small
-              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
-            >
+            <br>
+            <small id="activity-type-instructions">Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
           </div>
-        </div>
-        <div class="card">
+        </fieldset>
+
+        <!-- Card for inputting daily budget, age, and meal preferences -->
+        <fieldset class="card" aria-labelledby="budget-group">
+          <legend id="budget-group">Budget and Age</legend>
           <div>
             <label for="budget">Daily Meal Budget (RMB):</label>
-            <br />
-            <input type="number" id="budget" value="100" min="10" max="1000" />
+            <br>
+            <input type="number" id="budget" value="100" min="10" max="1000" aria-required="true" />
           </div>
 
           <div>
             <label for="age">Age:</label>
-            <br />
-            <input type="number" id="age" value="25" min="10" max="120" />
+            <br>
+            <input type="number" id="age" value="25" min="10" max="120" aria-required="true" />
           </div>
 
           <div>
             <label for="meal_preferences">Meal Preferences:</label>
-            <br />
-            <select id="meal_preferences" multiple>
+            <br>
+            <select id="meal_preferences" multiple  class="responsive-select" aria-describedby="meal-preferences-instructions">
               <option value="quick">Quick</option>
               <option value="detailed">Detailed</option>
               <option value="snacks">Snacks</option>
             </select>
-            <br />
-            <small
-              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
-            >
+            <br>
+            <small id="meal-preferences-instructions">Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
           </div>
-        </div>
+        </fieldset>
 
-        <div class="card">
+        <!-- Card for gender, height, and diet restrictions -->
+        <fieldset class="card" aria-labelledby="diet-group">
+          <legend id="diet-group">Diet and Physical Information</legend>
           <div>
             <label for="gender">Gender:</label>
-            <br />
-            <select id="gender">
+            <br>
+            <select id="gender"  class="responsive-select" aria-required="true">
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>
@@ -117,13 +118,13 @@
 
           <div>
             <label for="height">Height (cm):</label>
-            <br />
-            <input type="number" id="height" value="170" min="100" max="250" />
+            <br>
+            <input type="number" id="height" value="170" min="100" max="250" aria-required="true" />
           </div>
           <div>
-            <label for="diet">Diet Restrictions:</label>
-            <br />
-            <select id="diet" multiple>
+            <label for="diet" aria-describedby="diet-instructions">Diet Restrictions:</label>
+            <br>
+            <select id="diet" multiple  class="responsive-select" aria-describedby="diet-instructions">
               <option value="vegan">Vegan</option>
               <option value="vegetarian">Vegetarian</option>
               <option value="gluten_free">Gluten-Free</option>
@@ -131,92 +132,82 @@
               <option value="paleo">Paleo</option>
               <option value="dairy_free">Dairy-Free</option>
             </select>
-            <br />
-            <small
-              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
-            >
+            <br>
+            <small id="diet-instructions">Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
           </div>
-        </div>
-        <div class="card">
+        </fieldset>
+
+        <!-- Card for weight input, target weight, activity level, and allergies -->
+        <fieldset class="card" aria-labelledby="physical-group">
+          <legend id="physical-group">Physical and Health Information</legend>
           <div>
             <label for="current_weight">Current Weight (kg):</label>
-            <br />
-            <input
-              type="number"
-              id="current_weight"
-              value="70"
-              min="30"
-              max="300"
-            />
+            <br>
+            <input type="number" id="current_weight" value="70" min="30" max="300" aria-required="true" />
           </div>
 
           <div>
             <label for="target_weight">Target Weight (kg):</label>
-            <br />
-            <input
-              type="number"
-              id="target_weight"
-              value="75"
-              min="30"
-              max="300"
-            />
+            <br>
+            <input type="number" id="target_weight" value="75" min="30" max="300" aria-required="true" />
           </div>
 
           <div>
             <label for="activity_level">Daily Activity Level:</label>
-            <br />
-            <select id="activity_level">
+            <br>
+            <select id="activity_level"  class="responsive-select" aria-required="true">
               <option value="low">Low</option>
               <option value="moderate" selected>Moderate</option>
               <option value="high">High</option>
             </select>
           </div>
+
           <div>
-            <label for="allergies">Allergies:</label>
-            <br />
-            <select id="allergies" multiple>
+            <label for="allergies" aria-describedby="allergies-instructions">Allergies:</label>
+            <br>
+            <select id="allergies" multiple  class="responsive-select" aria-describedby="allergies-instructions">
               <option value="nuts">Nuts</option>
               <option value="shellfish">Shellfish</option>
               <option value="soy">Soy</option>
               <option value="dairy">Dairy</option>
             </select>
-            <br />
-            <small
-              >Hold Ctrl (Windows) or Command (Mac) to select multiple</small
-            >
+            <br>
+            <small id="allergies-instructions">Hold Ctrl (Windows) or Command (Mac) to select multiple</small>
           </div>
-        </div>
+        </fieldset>
       </div>
     </section>
 
+    <!-- Button section to generate the nutrition guide based on user input -->
     <section>
       <div class="card-container">
         <div class="button-wrapper">
-          <button id="generateNutritionPlanBtn">Generate Nutrition Guide</button>
+          <button id="generateNutritionPlanBtn" aria-label="Generate Nutrition Guide">Generate Nutrition Guide</button>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- Section to display loading state and nutrition guide results -->
+    <section aria-live="polite">
       <div class="card-container">
         <div class="card">
           <div id="information-before-loading">
             <h5>Your nutrition guide will appear here.</h5>
-            Please be patient while your nutrition guide is being generated—the
-            API likes to take its sweet time!
+            <small> Please be patient while your nutrition guide is being generated—the API likes to take its sweet time!</small>
           </div>
-          <div id="loading">Loading...</div>
-          <div id="error"></div>
+          <div id="loading" role="status">Loading...</div>
+          <div id="error" role="alert"></div>
           <div id="content"></div>
         </div>
       </div>
     </section>
 
+    <!-- Footer section with page attribution -->
     <footer>
       <p>Wenbo's Work</p>
     </footer>
 
-    <!-- 引用外部的 JavaScript 文件 -->
+    <!-- External JavaScript files for handling nutrition guide generation and shared functionality -->
     <script src="js/sharedModule.js"></script>
     <script src="js/nutrition.js"></script>
   </body>

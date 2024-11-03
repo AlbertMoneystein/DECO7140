@@ -1,97 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generic Chat</title>
-  <!--<link rel="stylesheet" href="/assessment/css/style.css" />-->
-  <!--<link rel="stylesheet" href="/assessment/css/community.css">-->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generic Chat</title>
+    <!-- External CSS files for page styling -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
 
-</head>
-<body>
-  <header>
-    <!--<div class="logo">Fitness Website</div>-->
-    <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo">
-    <nav>
-      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-      <!-- Add hamburger menu button -->
-      <ul id="nav-links" class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="workout.html">Workout Plan</a></li>
-        <li><a href="nutrition.html">Nutrition Guide</a></li>
-        <!--<li><a href="#">Mental Health</a></li>-->
-        <li><a href="community.html">Community</a></li>
-      </ul>
-    </nav>
-  </header>
- 
-  <div class="image-container">
-    <img src="assets/chat_room_vertical_part_1.png" alt="nutrition guide decoration" />
-  </div>
+  <body>
+    <!-- Header section with logo and navigation menu -->
+    <header>
+      <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</div>
+        <!-- Navigation links with aria-current for active page indication -->
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="workout.html">Workout Plan</a></li>
+          <li><a href="nutrition.html">Nutrition Guide</a></li>
+          <li><a href="community.html" aria-current="page">Community</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <h1>Chat Room</h1>
+    <!-- Decorative image for visual enhancement of the page -->
+    <div class="image-container">
+      <img
+        src="assets/chat_room_vertical_part_1.png"
+        alt="Decorative background for chat room"
+      />
+    </div>
 
-  
-  <div class="community-chatroom-grid">
-    <!--
-    <header class="community-chatroom-header">
-      <h1 class="community-h1">Generic Chat Room</h1>
-    </header>-->
+    <!-- Main title of the chat room page -->
+    <h1>Chat Room</h1>
 
-    <main class="community-main-content" >
+    <!-- Main layout container for chat history and post form -->
+    <div class="community-chatroom-grid">
+      <!-- Main content area displaying chat history -->
+      <main class="community-main-content">
+        <h3 class="community-h3">Chat History</h3>
+        <div id="community-chat-list">
+          <!-- Dynamic chat posts will be loaded here -->
+        </div>
+      </main>
 
-  
-      <h4 class="community-h2">Chat History</h4>
-      <div id="community-chat-list">
-      <!-- Dynamic chat posts will be loaded here -->
-      </div>
-    </main>
+      <!-- Sidebar containing the form to post a new chat message -->
+      <aside class="community-sidebar">
+        <h3 class="community-h3">Post a New Chat</h3>
 
-    <aside class="community-sidebar">
+        <!-- Card container for the chat post form -->
+        <div class="card-container">
+          <div class="card">
+            <form id="community-chatPostForm" class="community-form" aria-describedby="form-instructions">
+              <p id="form-instructions"><strong>Fill out your name, title, and content to post a chat message.</strong></p>
 
-      <h4 class="community-h2">Post a new chat</h4>
+              <!-- Input field for the user's name -->
+              <label for="person_name" class="community-label">Your Name:</label>
+              <input
+                type="text"
+                id="person_name"
+                name="person_name"
+                class="community-input"
+                aria-required="true"
+                required
+              />
 
-      <div class="card-container">
-        <div class="card" >
-          <form id="community-chatPostForm" class="community-form">
-            <label for="person_name" class="community-label">Your Name:</label>
-            <input type="text" id="person_name" name="person_name" class="community-input" required>
-    
-            <label for="chat_post_title" class="community-label">Post Title:</label>
-            <input type="text" id="chat_post_title" name="chat_post_title" class="community-input" required>
-    
-            <label for="chat_post_content" class="community-label">Post Content:</label>
-            <textarea id="chat_post_content" name="chat_post_content" class="community-textarea" required></textarea>
-            
-            <div class="button-wrapper">
-              <br>
-              <br>
-              <button type="submit">Submit</button>
-            </div>
-            
-          </form>
-       </div>
-       
-       
+              <!-- Input field for the chat post title -->
+              <label for="chat_post_title" class="community-label">Post Title:</label>
+              <input
+                type="text"
+                id="chat_post_title"
+                name="chat_post_title"
+                class="community-input"
+                aria-required="true"
+                required
+              />
 
-      </div>
+              <!-- Text area for the chat post content -->
+              <label for="chat_post_content" class="community-label">Post Content:</label>
+              <textarea
+                id="chat_post_content"
+                name="chat_post_content"
+                class="community-textarea"
+                aria-required="true"
+                required
+              ></textarea>
 
+              <!-- Submit button to post the chat message -->
+              <div class="button-wrapper">
+                <button type="submit" aria-label="Submit your chat post">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div>
 
+    <!-- Footer section with attribution -->
+    <footer>
+      <p>Wenbo's Work</p>
+    </footer>
 
-    </aside>
-  </div>
-  <footer>
-    <p>Wenbo's Work</p>
-  </footer>
-
-  <script src="js/community.js"></script>
-  <script src="js/sharedModule.js"></script>
-</body>
+    <!-- External JavaScript files for community chat functionality and shared utilities -->
+    <script src="js/community.js"></script>
+    <script src="js/sharedModule.js"></script>
+  </body>
 </html>

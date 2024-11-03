@@ -1,122 +1,119 @@
 /* Global color variables */
 :root {
-    --main-bg-color: #f4f6f9;
-    --text-color: #333;
-    --heading-color: #2c3e50;
-    --subheading-color: #777;
-    --h2-gradient-start: #f39c12;
-    --h2-gradient-end: #e74c3c;
-    --primary-bg-color: #3A7D44;
-    --secondary-bg-color: #333;
-    --accent-bg-color: #FFA726;
-    --light-bg-color: #f9f9f9;
-    --dark-text-color: white;
-    --light-text-color: #333;
-    --sub-text-color: #777;
-    --border-color: #ccc;
-    --odd-bg-color: #f0f0f0;
-    --even-bg-color: #e0e0e0;
-    --hover-bg-color: #367a38;
+    --primary-bg-color: #3A7D44; /* Primary background color for key sections */
+    --button-bg-color: #3A7D44; /* Primary button background color */
+    --nav-bg-color: #3A7D44; /* Background color for navigation */
+    --button-hover-color: #2f6a38; /* Hover color for buttons */
+    --nav-hover-bg-color: #2f6a38; /* Hover color for navigation links */
+
+    --main-bg-color: #f4f6f9; /* Main background color for the entire page */
+    --border-color: #ccc; /* Standard border color */
+    --odd-bg-color: #fafafa; /* Light background color for odd items */
+    --even-bg-color: #e0e0e0; /* Darker background color for even items */
+    --dark-text-color: white; /* White text for dark backgrounds */
+    
+    --focus-outline-color: #ff7f50;
+    --hero-button-bg-color: #e7663b; /* Background color for hero section button */
+    --hero-button-hover-color: #c15229; /* Hover background color for hero button */
+
+    --heading-color: #2c3e50; /* Color for all headings */
+    --text-color: #333; /* Default text color */
+    --secondary-bg-color: #333; /* Secondary background for elements like footers */
+    --light-text-color: #333; /* Dark text for light backgrounds */
+    --chat-meta-text-color: #777; /* Secondary text color for metadata, e.g., in chat */
+    --hero-overlay-color: rgba(0, 0, 0, 0.5); /* Overlay color for hero section */  
 }
 
 /* Global font and base styles */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); /* Google Fonts import for 'Open Sans' font */
 
+/* Basic styles for the HTML and body elements */
 html, body {
-    height: 100%;
+    height: 100%; /* Full height for page */
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    max-width: 100vw;
-    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif; /* Primary font */
+    background-color: var(--main-bg-color); /* Background color for entire page */
+    color: var(--text-color); /* Default font color */
+    line-height: 1.6; /* Comfortable line height */
+    max-width: 100vw; /* Restrict max-width to prevent overflow */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Global heading styles */
+/* Global heading styles (h1-h6) */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    color: var(--heading-color);
-    margin-bottom: 20px;
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: center;
-    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif; /* Font for headings */
+    margin-bottom: 20px; /* Consistent bottom margin */
+    font-weight: 700; /* Bold font weight for all headings */
+    line-height: 1.3; /* Compact line height */
+    text-align: center; /* Centered text alignment */
+    letter-spacing: 1px; /* Slightly increased letter spacing for readability */
 }
 
 /* H1: Main heading style */
 h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 25px;
+    color: var(--heading-color); /* Primary heading color */
+    font-size: 2.5rem; /* Large font size for primary headings */
+    letter-spacing: 1.2px; /* Extra spacing for impact */
+    text-transform: uppercase; /* All uppercase for emphasis */
+    margin-top: 30px; /* Larger top margin */
+    margin-bottom: 25px; /* Adjusted bottom margin */
 }
 
 /* H2: Secondary heading style */
 h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    position: relative;
+    color: var(--heading-color); /* Same color as main heading */
+    font-size: 2rem; /* Slightly smaller than h1 */
+    font-weight: 600; /* Light weight for visual hierarchy */
+    margin-bottom: 25px; /* Bottom spacing */
+    position: relative; /* Position for additional styles if needed */
 }
 
-/* Decorative line for H2 to enhance visual hierarchy */
-h2::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(to right, var(--h2-gradient-start), var(--h2-gradient-end));
-}
-
-/* H3: Smaller heading */
+/* H3: Subheading style for minor headings */
 h3 {
-    font-size: 1.75rem;
-    font-weight: 500;
+    color: var(--heading-color); /* Standard heading color */
+    font-size: 1.75rem; /* Medium size for subheadings */
+    font-weight: 500; /* Regular weight */
     margin-bottom: 20px;
 }
 
-/* H4: Subheading */
+/* H4: Subheading style */
 h4 {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 18px;
 }
 
-/* H5: Small titles or additional headings */
+/* H5: Style for smaller titles or additional headings */
 h5 {
     font-size: 1.25rem;
-    font-weight: 400;
-    margin-bottom: 15px;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: left; /* Align to left for differentiation */
+    letter-spacing: 0px;
+    text-transform: capitalize; /* Capitalize each word */
 }
 
-/* H6: Least important heading */
+/* H6: Style for least important heading */
 h6 {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 10px;
-    color: var(--subheading-color);
+    text-transform: capitalize;
 }
 
-/* Paragraph text style */
+/* Paragraph text style - Standard text */
 p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    text-align: left;
-    letter-spacing: 0.3px;
+    font-size: 1rem; /* Base font size */
+    line-height: 1; /* Tighter line height */
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0px; /* Standard letter spacing */
 }
 
-/* Small text, typically used for instructions or footnotes */
+/* Small text - Usually used for instructions or footnotes */
 small {
-    font-size: 60%;
-    line-height: 1.6;
-    color: var(--text-color);
+    font-size: 90%; /* Small font size */
+    line-height: 1.6; /* Consistent line height */
+    color: var(--text-color); /* Standard text color */
 }
-

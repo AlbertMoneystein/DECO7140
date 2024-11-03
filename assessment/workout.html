@@ -4,59 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workout Plan Generator</title>
-    <!-- 引入外部CSS文件 -->
-    <!--<link rel="stylesheet" href="css/style.css" />-->
+    <!-- External CSS files for page styling -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
-
-    
   </head>
+
   <body>
+    <!-- Header section with logo and navigation menu -->
     <header>
-      <!--<div class="logo">Fitness Website</div>-->
       <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
       <nav>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <!-- Add hamburger menu button -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">&#9776;</div>
+        <!-- Navigation links for different pages -->
         <ul id="nav-links" class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="workout.html">Workout Plan</a></li>
           <li><a href="nutrition.html">Nutrition Guide</a></li>
-          <!--<li><a href="#">Mental Health</a></li>-->
           <li><a href="community.html">Community</a></li>
         </ul>
       </nav>
     </header>
-           
-    
+
+    <!-- Image container to visually enhance the page -->
     <div class="image-container">
-      <img src="assets/workout_plan_part1.png" alt="workoutplan decoration image" />
+      <img
+        src="assets/workout_plan_part1.png"
+        alt="Decorative workout plan image"
+      />
     </div>
-    
 
-
-
-
-
-     
- 
-
-
-  
-
-
+    <!-- Main title for the Workout Plan Generator page -->
     <h1>Workout Plan Generator</h1>
 
+    <!-- Section for selecting workout preferences -->
     <section>
-
       <div class="card-container">
-        <div class="card">
+        <!-- Card for selecting fitness goal, fitness level, and exercise types -->
+        <fieldset class="card" aria-labelledby="goal-group">
+          <legend id="goal-group">Workout Preferences</legend>
           <div>
             <label for="goal">Fitness Goal:</label>
-            <br />
-            <select id="goal">
+            <br>
+            <select id="goal" aria-required="true">
               <option value="weight_loss">Weight Loss</option>
               <option value="muscle_gain">Muscle Gain</option>
               <option value="endurance">Endurance</option>
@@ -65,8 +56,8 @@
 
           <div>
             <label for="fitness_level">Current Fitness Level:</label>
-            <br />
-            <select id="fitness_level">
+            <br>
+            <select id="fitness_level" aria-required="true">
               <option value="beginner">Beginner</option>
               <option value="intermediate">Intermediate</option>
               <option value="advanced">Advanced</option>
@@ -74,134 +65,107 @@
           </div>
 
           <div>
-            <label>Preferred Exercise Types:</label>
-
+            <label for="exercise_types">Preferred Exercise Types:</label>
+            <br>
             <div class="checkbox-group" id="exercise_types">
               <label><input type="checkbox" value="cardio" /> Cardio</label>
               <label><input type="checkbox" value="strength" /> Strength</label>
-              <br />
-              <label
-                ><input type="checkbox" value="flexibility" />
-                Flexibility</label
-              >
+              <label><input type="checkbox" value="flexibility" /> Flexibility</label>
               <label><input type="checkbox" value="balance" /> Balance</label>
             </div>
           </div>
-        </div>
+        </fieldset>
 
-        <div class="card">
+        <!-- Card for setting workout frequency and available equipment -->
+        <fieldset class="card" aria-labelledby="frequency-group">
+          <legend id="frequency-group">Workout Frequency and Equipment</legend>
           <div>
             <label for="days_per_week">Days per Week:</label>
-            <br />
-            <input type="number" id="days_per_week" min="1" max="7" value="4" />
+            <br>
+            <input type="number" id="days_per_week" min="1" max="7" value="4" aria-required="true" />
           </div>
 
           <div>
-            <label for="session_duration"
-              >Workout Duration per Session (minutes):</label
-            >
-            <br />
-            <input
-              type="number"
-              id="session_duration"
-              min="10"
-              max="180"
-              value="45"
-            />
+            <label for="session_duration">Workout Duration per Session (minutes):</label>
+            <br>
+            <input type="number" id="session_duration" min="10" max="180" value="45" aria-required="true" />
           </div>
 
           <div>
-            <label>Available Equipment:</label>
+            <label for="equipment_available">Available Equipment:</label>
+            <br>
             <div class="checkbox-group" id="equipment_available">
-              <label
-                ><input type="checkbox" value="dumbbells" /> Dumbbells</label
-              >
+              <label><input type="checkbox" value="dumbbells" /> Dumbbells</label>
               <label><input type="checkbox" value="yoga_mat" /> Yoga Mat</label>
-              <br />
-              <label
-                ><input type="checkbox" value="resistance_band" /> Resistance
-                Band</label
-              >
-              <label
-                ><input type="checkbox" value="no_equipment" /> No
-                Equipment</label
-              >
+              <label><input type="checkbox" value="resistance_band" /> Resistance Band</label>
+              <label><input type="checkbox" value="no_equipment" /> No Equipment</label>
             </div>
           </div>
-        </div>
+        </fieldset>
 
-        <div class="card">
+        <!-- Card for additional settings like duration, language, and health conditions -->
+        <fieldset class="card" aria-labelledby="additional-settings">
+          <legend id="additional-settings">Additional Settings</legend>
           <div>
             <label for="plan_duration_weeks">Plan Duration (weeks):</label>
-            <br />
-            <input
-              type="number"
-              id="plan_duration_weeks"
-              min="1"
-              max="52"
-              value="4"
-            />
+            <br>
+            <input type="number" id="plan_duration_weeks" min="1" max="52" value="4" aria-required="true" />
           </div>
 
           <div>
             <label for="lang">Language:</label>
-            <br />
-            <select id="lang">
+            <br>
+            <select id="lang" aria-required="true">
               <option value="en">English</option>
               <option value="zh">Chinese</option>
             </select>
           </div>
 
           <div>
-            <label>Health Conditions:</label>
+            <label for="health_conditions" aria-describedby="health-conditions-instructions">Health Conditions:</label>
+            <br>
             <div class="checkbox-group" id="health_conditions">
-              <label
-                ><input type="checkbox" value="knee_pain" /> Knee Pain</label
-              >
-              <label
-                ><input type="checkbox" value="back_pain" /> Back Pain</label
-              >
-              <br />
-              <label
-                ><input type="checkbox" value="heart_conditions" /> Heart
-                Conditions</label
-              >
+              <label><input type="checkbox" value="knee_pain" /> Knee Pain</label>
+              <label><input type="checkbox" value="back_pain" /> Back Pain</label>
+              <label><input type="checkbox" value="heart_conditions" /> Heart Conditions</label>
               <label><input type="checkbox" value="none" /> None</label>
             </div>
+            <small id="health-conditions-instructions">Select any applicable health conditions</small>
           </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <!-- Section for button to generate workout plan -->
+    <section>
+      <div class="card-container">
+        <div class="button-wrapper">
+          <button id="generateWorkoutPlanBtn" aria-label="Generate Workout Plan">Generate Workout Plan</button>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- Section to display loading state and generated workout plan -->
+    <section aria-live="polite">
       <div class="card-container">
-        <div class="button-wrapper">
-            <button id="generateWorkoutPlanBtn">Generate Workout Plan</button>
+        <div class="card">
+          <div id="information-before-loading">
+            <h5>Your workout plan will appear here.</h5>
+            <small>Please be patient while your workout plan is being generated—the API likes to take its time!</small>
+          </div>
+          <div id="loading" role="status">Loading...</div>
+          <div id="error" role="alert"></div>
+          <div id="content"></div>
         </div>
+      </div>
     </section>
 
-    <section>
-        <div class="card-container">         
-          <div class="card">  
-          <div id="information-before-loading">
-            <h5>
-              Your workout plan will appear here.
-            </h5>
-
-            Please be patient while your workout plan is being generated—the API likes to take its sweet time!
-          </div>
-          <div id="loading">Loading...</div>
-          <div id="error"></div>
-          <div id="content"></div>
-
-         </div>
-        </div>
-      </section>
-
+    <!-- Footer section with page attribution -->
     <footer>
       <p>Wenbo's Work</p>
     </footer>
 
+    <!-- External JavaScript files for page functionality -->
     <script src="js/sharedModule.js"></script>
     <script src="js/workout.js"></script>
   </body>

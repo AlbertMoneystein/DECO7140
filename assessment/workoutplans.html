@@ -10,38 +10,33 @@
 
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
-    
   </head>
   <body>
     <header>
-      <!--<div class="logo">Fitness Website</div>-->
       <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
       <nav>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <!-- Add hamburger menu button -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</div>
         <ul id="nav-links" class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="workout.html">Workout Plan</a></li>
           <li><a href="nutrition.html">Nutrition Guide</a></li>
-          <!--<li><a href="#">Mental Health</a></li>-->
           <li><a href="community.html">Community</a></li>
         </ul>
       </nav>
     </header>
 
-
-
     <!-- Section with the Workout Plan -->
-    <section id="workout-plan1">
+    <section id="workout-plan1" aria-labelledby="workout-plan1-title">
       <!-- Title of the Workout Plan -->
-      <h2>Workout Plan for Beginner Strength Training </h2>
-      <button onclick="window.location.href='index.html'" class="button">Back to Home</button>
+      <h2>Workout Plan for Beginner Strength Training</h2>
+      <button onclick="window.location.href='index.html'" class="button" aria-label="Back to Home">
+        Back to Home
+      </button>
       <p>
         <strong>Goal:</strong> Muscle Gain |
         <strong>Fitness Level:</strong> Beginner | <strong>Work out:</strong> 4
         days per week, 30 minutes per session
       </p>
-      
 
       <div class="card-container">
         <!-- Monday Workout Plan -->
@@ -131,16 +126,15 @@
           <p>Sets: 3</p>
           <p>Equipment: Dumbbells</p>
         </div>
-       
       </div>
-      
-
     </section>
 
-    <section id="workout-plan2">
+    <section id="workout-plan2" aria-labelledby="workout-plan2-title">
       <!-- Title of the Workout Plan -->
       <h2>Cardio Workout Plan</h2>
-      <button onclick="window.location.href='index.html'" class="button">Back to Home</button>
+      <button onclick="window.location.href='index.html'" class="button" aria-label="Back to Home">
+        Back to Home
+      </button>
       <p>
         <strong>Goal:</strong> Endurance |
         <strong>Fitness Level:</strong> Intermediate |
@@ -238,10 +232,12 @@
       </div>
     </section>
 
-    <section id="workout-plan3">
+    <section id="workout-plan3" aria-labelledby="workout-plan2-title">
       <!-- Title of the Workout Plan -->
       <h2>Flexibility Workout Plan</h2>
-      <button onclick="window.location.href='index.html'" class="button">Back to Home</button>
+      <button onclick="window.location.href='index.html'" class="button" aria-label="Back to Home">
+        Back to Home
+      </button>
       <p>
         <strong>Goal:</strong> Endurance |
         <strong>Fitness Level:</strong> Advanced | <strong>Work out:</strong> 4

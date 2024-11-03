@@ -4,66 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health & Fitness Homepage</title>
+    <!-- External CSS files for styling the page -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
-    
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
-
-
-
   </head>
+
   <body>
+    <!-- Header section with logo and navigation menu -->
     <header>
-      <!--<div class="logo">Fitness Website</div>-->
-      <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo">
+      <img src="assets/logo4.jpg" alt="Fitness Website Logo" class="logo" />
       <nav>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <!-- Add hamburger menu button -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</div>
+        <!-- Hamburger menu for mobile navigation -->
         <ul id="nav-links" class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="workout.html">Workout Plan</a></li>
           <li><a href="nutrition.html">Nutrition Guide</a></li>
-          <!--<li><a href="#">Mental Health</a></li>-->
           <li><a href="community.html">Community</a></li>
         </ul>
       </nav>
     </header>
 
+    <!-- Hero section with a call-to-action for workout plans -->
     <section class="home-hero">
       <h1>Discover the Best Workout Plans for You</h1>
       <p>Personalized fitness plans to help you achieve your goals.</p>
-      <button onclick="window.location.href='workout.html'">Start Exploring</button>
+      <button onclick="window.location.href='workout.html'" aria-label="Explore workout plans">
+        Start Exploring
+      </button>
     </section>
 
-    <section >
+    <!-- Section showcasing recommended workout plans -->
+    <section>
       <h2>Recommended Workout Plans</h2>
       <div class="card-container">
+        <!-- Card for Strength Workout Plan -->
         <div class="card">
-          <img src="assets/workout1.jpg" alt="Strength Training" />
-          <h3>Strength Workout</h3>
+          <img src="assets/workout1.jpg" alt="Strength Workout Plan image" />
+          <h4>Strength Workout</h4>
           <p>30 minutes | Beginner</p>
-          <!-- Button to Navigate to the Other HTML File and Scroll to the Section -->
-          <button onclick="window.location.href='workoutplans.html#workout-plan1'">View Details</button>
+          <!-- Button to navigate to workout plan details -->
+          <button onclick="window.location.href='workoutplans.html#workout-plan1'" aria-label="View Strength Workout details">
+            View Details
+          </button>
         </div>
+
+        <!-- Card for Cardio Workout Plan -->
         <div class="card">
-          <img src="assets/workout2.jpg" alt="Cardio Workout" />
-          <h3>Cardio Workout</h3>
+          <img src="assets/workout2.jpg" alt="Cardio Workout Plan image" />
+          <h4>Cardio Workout</h4>
           <p>45 minutes | Intermediate</p>
-          <button onclick="window.location.href='workoutplans.html#workout-plan2'">View Details</button>
+          <button onclick="window.location.href='workoutplans.html#workout-plan2'" aria-label="View Cardio Workout details">
+            View Details
+          </button>
         </div>
+
+        <!-- Card for Flexibility Workout Plan -->
         <div class="card">
-          <img src="assets/workout3.jpg" alt="Flexibility Workout" />
-          <h3>Flexibility Workout</h3>
+          <img src="assets/workout3.jpg" alt="Flexibility Workout Plan image" />
+          <h4>Flexibility Workout</h4>
           <p>20 minutes | Advanced</p>
-          <button onclick="window.location.href='workoutplans.html#workout-plan3'">View Details</button>
+          <button onclick="window.location.href='workoutplans.html#workout-plan3'" aria-label="View Flexibility Workout details">
+            View Details
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- Footer section with attribution -->
     <footer>
       <p>Wenbo's Work</p>
     </footer>
+
+    <!-- External JavaScript file for shared functionalities -->
     <script src="js/sharedModule.js"></script>
   </body>
 </html>

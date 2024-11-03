@@ -1,4 +1,4 @@
-/* Header navigation layout */
+/* Header navigation layout - sticky header with shadow and spacing */
 header {
     position: sticky;
     background-color: var(--primary-bg-color);
@@ -10,6 +10,7 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo styling within the header */
 header .logo {
     font-size: 1.5em;
     font-weight: bold;
@@ -17,23 +18,23 @@ header .logo {
     height: 50px;
 }
 
-/* Ensure content fills the page and prevent footer from floating */
+/* Main content layout to fill page and prevent footer from floating */
 main {
     min-height: calc(100vh - 60px);
     padding-bottom: 60px;
 }
 
-/* Nutrition page styles */
+/* Section styling for nutrition pages */
 .section {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    background-color: var(--light-bg-color);
-    display: flex;
+    display: grid;
     grid-template-columns: 1fr;
     row-gap: 10px;
 }
 
+/* Image container styles for full-width layout */
 .image-container {
     width: 100%;
 }
@@ -44,22 +45,23 @@ main {
     display: block;
 }
 
-/* Footer layout */
+/* Footer layout with center-aligned text */
 footer {
     position: relative;
     bottom: 0;
     width: 100%;
     background-color: var(--secondary-bg-color);
-    color: var(--dark-text-color);
+    color: white;
     padding: 20px 0;
     text-align: center;
 }
 
+/* Footer paragraph styles */
 footer p {
     margin: 0;
 }
 
-/* Community page layout */
+/* Community page grid layout */
 .community-chatroom-grid {
     display: grid;
     grid-template-areas: "header header" "main sidebar";
@@ -67,17 +69,17 @@ footer p {
     gap: 50px;
     margin: 20px;
     padding: 10px;
-    border: 2px solid var(--accent-bg-color);
+    border: 2px solid var(--primary-bg-color);
     border-radius: 8px;
 }
 
+/* Community page header */
 .community-chatroom-header {
     grid-area: header;
-    padding: 5px 5px;
-    background-color: var(--light-bg-color);
     color: var(--light-text-color);
 }
 
+/* Community main content area with scroll */
 .community-main-content {
     grid-area: main;
     margin-bottom: 30px;
@@ -88,21 +90,30 @@ footer p {
     border-radius: 8px;
 }
 
+/* Community sidebar layout */
 .community-sidebar {
     grid-area: sidebar;
+    margin-bottom: 30px;
     padding: 0px;
     border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-/* Common styles for all items */
+/* Common item styles with border and padding */
 .item, .meal-item, .chat-item {
     padding: 10px;
-    margin: 10px 0;
+    margin: 0px 0;
     border: 1px solid var(--border-color);
     border-radius: 5px;
 }
 
-/* Alternate item background colors using nth-child */
+/* Text alignment within chat item */
+.chat-item p {
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+/* Alternate background colors for odd/even items */
 .meal-item:nth-child(odd), .chat-item:nth-child(odd) {
     background-color: var(--odd-bg-color);
 }
@@ -111,7 +122,7 @@ footer p {
     background-color: var(--even-bg-color);
 }
 
-/* day-plan styles for flexbox layout */
+/* Flex layout for day-plan list */
 .day-plan ul {
     display: flex;
     flex-wrap: wrap;
@@ -120,6 +131,7 @@ footer p {
     margin: 0;
 }
 
+/* Individual day-plan item styles */
 .day-plan ul li {
     flex: 1 1 calc(25% - 10px);
     max-width: 25%;
@@ -127,7 +139,6 @@ footer p {
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid var(--border-color);
-    background-color: var(--light-bg-color);
 }
 
 /* Alternate colors for day-plan list items */
@@ -139,9 +150,9 @@ footer p {
     background-color: var(--even-bg-color);
 }
 
-/* Responsive design for screens smaller than 768px */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    /* Global adjustments */
+    /* Font size and padding adjustments */
     body {
         font-size: 14px;
     }
@@ -155,13 +166,13 @@ footer p {
         font-size: 0.9em;
     }
 
-    /* Adjust main content layout */
+    /* Single column layout for cards on small screens */
     .card-container {
         grid-template-columns: 1fr;
         padding: 0;
     }
 
-    /* Navigation styles */
+    /* Responsive navigation adjustments */
     nav ul {
         display: none;
         flex-direction: column;
@@ -188,7 +199,7 @@ footer p {
     }
 
     nav ul li a:hover {
-        background-color: var(--hover-bg-color);
+        background-color: var(--nav-hover-bg-color);
     }
 
     .hamburger {
@@ -200,16 +211,11 @@ footer p {
         flex-direction: column;
     }
 
-    /* Adjustments for community page */
+    /* Community grid layout adjustments for mobile */
     .community-chatroom-grid {
         display: block;
         margin: 10px;
         padding: 5px;
-    }
-
-    .community-chatroom-header {
-        text-align: center;
-        padding: 10px 0;
     }
 
     .community-main-content {
@@ -230,20 +236,26 @@ footer p {
         box-sizing: border-box;
     }
 
-    .community-form {
-        margin-top: 10px;
-    }
-
-    /* Responsive layout for day-plan ul li */
+    /* Adjust day-plan items to full width on mobile */
     .day-plan ul li {
         flex: 1 1 100%;
         margin-bottom: 10px;
         max-width: 100%;
     }
 
-    /* Ensure meal-item and chat-item occupy full width on small screens */
+    /* Full width for meal and chat items on small screens */
     .meal-item, .chat-item {
         flex: 1 1 100%;
         margin-bottom: 10px;
     }
 }
+
+/* Ensures all select boxes with .responsive-select class adjust to content width */
+.responsive-select {
+    width: auto; /* Allows width to adjust based on content */
+    min-width: 200px; /* Sets a reasonable minimum width */
+    max-width: 100%; /* Prevents select box from exceeding container width */
+    padding: 5px;
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
